@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+body {
+  background: radial-gradient(circle at center, #ffd6eb, #ffe3f0);
+  font-family: 'Algerian', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  animation: bodyGlow 2s ease-in-out;
+  padding: 40px;
+}
+
+/* Typewriter effect only on <p> */
+p {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+  width: 0;
+  opacity: 0;
+  margin: 12px 0;
+  animation: typing 2.5s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+/* Cursor disappears after typing */
+p.typed {
+  border-right: none;
+  animation: none;
+}
+
+/* Delays for each <p> */
+p:nth-of-type(1) { animation-delay: 0s, 0s; }
+p:nth-of-type(2) { animation-delay: 3s, 3s; }
+p:nth-of-type(3) { animation-delay: 6s, 6s; }
+p:nth-of-type(4) { animation-delay: 9s, 9s; }
+
+/* Typing */
+@keyframes typing {
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Soft glow start */
+@keyframes bodyGlow {
+  0% {
+    background-color: #fff0f5;
+    box-shadow: 0 0 0px #ffb6c1;
+  }
+  100% {
+    background-color: #ffe3f0;
+    box-shadow: 0 0 30px #ffc0cb inset;
+  }
+}
